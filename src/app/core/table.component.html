@@ -1,3 +1,5 @@
+
+
 <table class="table table-sm table-bordered table-striped">
     <tr>
         <th>ID</th>
@@ -12,9 +14,10 @@
         <td style="vertical-align:middle">{{item.price}}</td>
         <td class="text-center">
             <button class="btn btn-danger btn-sm" (click)="deleteProduct(item.id)">Delete</button>
-            <button class="btn btn-warning btn-sm" (click)="editProduct(item.id)">Edit</button>
+            <button class="btn btn-warning btn-sm" (click)="editProduct(item.id)" [routerLink]="['/form','edit', item.id, 
+            {name: item.name, category: item.category, price: item.price}]">Edit</button>
         </td>
     </tr>
 </table>
 
-<button class="btn btn-primary m-1" (click)="createProduct()">Create product</button>
+<button class="btn btn-primary m-1" (click)="createProduct()" routerLink="/form/create">Create product</button>

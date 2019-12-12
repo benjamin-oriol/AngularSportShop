@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MessagesService } from '../messages.service';
 import { Message } from './model';
+import { Observable } from 'rxjs';
 
 @Component({
     selector : "paMessage",
@@ -10,6 +11,6 @@ import { Message } from './model';
 export class MessageComponent{
     lastMessage : Message;
     constructor(private messagesService: MessagesService){
-        messagesService.registerMessageHandler(m => this.lastMessage = m)
+        messagesService.messages.subscribe(m => this.lastMessage = m)
     }
 }

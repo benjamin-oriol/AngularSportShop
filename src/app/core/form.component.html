@@ -1,5 +1,6 @@
 <div class="bg-primary text-white p-2" [class.bg-warning] = "editing">
     <h4>{{editing ? "Edit" : "Create" }} Product</h4>
+    Last Event: {{stateEvents | async | formatState}}
 </div>
 <!-- Je dois nommé mon formualire au cas ou il y en a plusieur -->
 <form novalidate #form="ngForm" (ngSubmit)= "submitForm(form)" (reset)="resetForm()">
@@ -17,5 +18,5 @@
     </div>
 
     <button type="submit" class="btn btn-primary m-1" [class.btn-warning]="editing" [disabled]="form.invalid">{{editing ? "Save" : "Create"}}</button>
-    <button type="reset" class="btn btn-secondary m-1">Cancel</button>
+    <button type="reset" class="btn btn-secondary m-1" routerLink="/">Cancel</button>
 </form>

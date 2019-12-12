@@ -7,6 +7,7 @@ import { MessageModule } from './message/message.module';
 import { TableComponent } from './core/table.component';
 import { FormComponent } from './core/form.component';
 import { MessageComponent } from './message/message.component';
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import { MessageComponent } from './message/message.component';
     BrowserModule,
     ModelModule,
     CoreModule,
-    MessageModule
+    MessageModule,
+    routing
   ],
   providers: [],
-  bootstrap: [TableComponent, FormComponent, MessageComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
